@@ -1,13 +1,13 @@
 import React from "react";
 import Dog from "./Dog";
 
-const DogList = () => {
+const DogList = ({ dogs }) => {
   return (
     <ul>
       <h2>Dog Count: 3</h2>
-      <Dog></Dog>
-      <Dog></Dog>
-      <Dog></Dog>
+      {dogs.map((dog, index) => {
+        return <Dog key={index + 1} name={dog.name} chipNum={dog.chipNumber} />;
+      })}
     </ul>
   );
 };
